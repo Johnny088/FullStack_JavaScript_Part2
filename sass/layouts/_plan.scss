@@ -1,13 +1,43 @@
 .plan {
+  padding-bottom: 158px;
   .container {
     width: 1112px;
     display: flex;
     flex-direction: column;
     @extend %layout-container;
   }
+  &__btn__wrap {
+    display: flex;
+    flex-direction: row;
+  }
+
   &__duration {
     @extend %display-row;
+    align-items: center;
+    margin-bottom: 98px;
+    &__title {
+      @include font(700, 60px, 70px);
+      letter-spacing: -1.88px;
+      color: $black-m;
+      width: 524px;
+    }
+    &__btn {
+      padding: 8px 18px;
+      @include font(700, 16px, 100%);
+      letter-spacing: -0.5px;
+      color: $black-m;
+      padding: 18px 0;
+      width: 176px;
+      border-radius: 0 16px 16px 0;
+      border: none;
+    }
+    &__btn.blue {
+      color: $white-m;
+      background-color: $blue-m;
+      border-radius: 16px 0 0 16px;
+    }
   }
+
   &__price {
     display: flex;
     justify-content: space-around;
@@ -16,6 +46,53 @@
       background-color: $gray-container;
       border-radius: 16px;
       text-align: center;
+      padding: 34px 24px;
+    }
+    &__type {
+      @include font(400, 18px, 28px);
+      letter-spacing: -0.56px;
+      color: $gray-m;
+      margin-bottom: 22px;
+    }
+    &__title {
+      @include font(700, 60px, 56px);
+      letter-spacing: -1.03px;
+      color: #1d293f;
+      margin-bottom: 28px;
+    }
+    &__span {
+      @include font(700, 28px, 56px);
+    }
+    &__description {
+      @extend %mulish-font;
+      @include font(400, 18px, 60px);
+      letter-spacing: -0.53px;
+    }
+    &__last {
+      margin-bottom: 36px;
+    }
+    &__btn {
+      padding: 20px 0;
+      width: 284px;
+      border-radius: 10px;
+      border: none;
+      background-color: $white-m;
+      color: $blue-m;
+      @include font(700, 17px, 100%);
+      letter-spacing: -0.53px;
+    }
+    &__item:hover {
+      background-color: $orange-m;
+      transform: scale(1.1);
+    }
+    &__item:hover &__type,
+    &__item:hover &__title,
+    &__item:hover &__description,
+    &__item:hover &__btn {
+      color: $white-m;
+    }
+    &__item:hover &__btn {
+      background-color: #9f3919;
     }
   }
 }

@@ -8,7 +8,7 @@
   padding: 0 20px;
 }
 
-.calculation__item, .scale__item, .description__item, .hero__description {
+.plan__price__description, .calculation__item, .scale__item, .description__item, .hero__description {
   font-family: "mulish", sans-serif;
 }
 
@@ -35,6 +35,10 @@ img {
 
 body {
   background-color: #fff;
+}
+
+button {
+  cursor: pointer;
 }
 
 .header .container {
@@ -257,10 +261,46 @@ body {
   color: #696871;
 }
 
+.plan {
+  padding-bottom: 158px;
+}
 .plan .container {
   width: 1112px;
   display: flex;
   flex-direction: column;
+}
+.plan__btn__wrap {
+  display: flex;
+  flex-direction: row;
+}
+.plan__duration {
+  align-items: center;
+  margin-bottom: 98px;
+}
+.plan__duration__title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: -1.88px;
+  color: #19191b;
+  width: 524px;
+}
+.plan__duration__btn {
+  padding: 8px 18px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.5px;
+  color: #19191b;
+  padding: 18px 0;
+  width: 176px;
+  border-radius: 0 16px 16px 0;
+  border: none;
+}
+.plan__duration__btn.blue {
+  color: #fff;
+  background-color: #5454d4;
+  border-radius: 16px 0 0 16px;
 }
 .plan__price {
   display: flex;
@@ -271,4 +311,57 @@ body {
   background-color: #f8f8f8;
   border-radius: 16px;
   text-align: center;
+  padding: 34px 24px;
+}
+.plan__price__type {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.56px;
+  color: #696871;
+  margin-bottom: 22px;
+}
+.plan__price__title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 56px;
+  letter-spacing: -1.03px;
+  color: #1d293f;
+  margin-bottom: 28px;
+}
+.plan__price__span {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 56px;
+}
+.plan__price__description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 60px;
+  letter-spacing: -0.53px;
+}
+.plan__price__last {
+  margin-bottom: 36px;
+}
+.plan__price__btn {
+  padding: 20px 0;
+  width: 284px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
+  color: #5454d4;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: -0.53px;
+}
+.plan__price__item:hover {
+  background-color: #ff7143;
+  transform: scale(1.1);
+}
+.plan__price__item:hover .plan__price__type, .plan__price__item:hover .plan__price__title, .plan__price__item:hover .plan__price__description, .plan__price__item:hover .plan__price__btn {
+  color: #fff;
+}
+.plan__price__item:hover .plan__price__btn {
+  background-color: #9f3919;
 }/*# sourceMappingURL=main.css.map */
