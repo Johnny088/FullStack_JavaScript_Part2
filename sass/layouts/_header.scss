@@ -1,7 +1,7 @@
 .header .container {
   width: 1070px;
-  padding: 20px 0;
   margin-left: calc((100% - 1146px) / 2);
+  padding: 0 20px;
   @extend %display-row;
   align-items: center;
   padding-bottom: 120px;
