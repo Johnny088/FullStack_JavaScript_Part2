@@ -1,5 +1,21 @@
-.plan .container {
-  width: $container;
-  //   @extend %display-row;
-  @extend %layout-container;
+.plan {
+  .container {
+    width: 1112px;
+    display: flex;
+    flex-direction: column;
+    @extend %layout-container;
+  }
+  &__duration {
+    @extend %display-row;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-around;
+    &__item {
+      width: 330px;
+      background-color: $gray-container;
+      border-radius: 16px;
+      text-align: center;
+    }
+  }
 }

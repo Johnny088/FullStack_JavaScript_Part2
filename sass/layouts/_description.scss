@@ -1,5 +1,36 @@
-.description .container {
-  width: $container;
-  @extend %display-row;
-  @extend %layout-container;
+.description {
+  padding-bottom: 84px;
+  .container {
+    width: $container;
+    display: flex;
+    align-items: center;
+    @extend %layout-container;
+  }
+
+  &__img {
+    margin-right: 166px;
+  }
+
+  &__item__wrap {
+    width: 556px;
+  }
+  &__title {
+    @include font(700, 50px, 57px);
+    letter-spacing: -1.56px;
+    color: $black-m;
+    margin-bottom: 30px;
+  }
+  &__item {
+    width: 460px;
+    @include font(400, 20px, 30px);
+    @extend %mulish-font;
+    letter-spacing: -0.63px;
+    color: $gray-m;
+    margin-bottom: 30px;
+  }
+  &__link {
+    @include font(700, 17px, 100%);
+    letter-spacing: -0.53px;
+    color: $blue-m;
+  }
 }

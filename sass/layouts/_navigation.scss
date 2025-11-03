@@ -1,7 +1,12 @@
-.navigation__wrap .container {
-  width: $container;
-  @extend %layout-container;
+.navigation__wrap {
+  padding-bottom: 150px;
+  .container {
+    width: $container;
+    @extend %layout-container;
+  }
 }
 .navigation__wrap__items {
-  @extend %display-row;
+  // @extend %display-row;
+  display: flex;
+  gap: 120px;
 }

@@ -1,5 +1,29 @@
-.scale .container {
-  width: $container;
-  @extend %display-row;
-  @extend %layout-container;
+.scale {
+  & .container {
+    width: $container;
+    display: flex;
+    @extend %layout-container;
+    align-items: center;
+    padding-bottom: 138px;
+  }
+  &__title {
+    @include font(700, 50px, 57px);
+    letter-spacing: -1.56px;
+    color: $black-m;
+    margin-bottom: 30px;
+  }
+  &__item {
+    @include font(400, 20px, 30px);
+    letter-spacing: -0.63px;
+    color: $black-m;
+    width: 460px;
+    @extend %mulish-font;
+    margin-right: 160px;
+    margin-bottom: 30px;
+  }
+  &__link {
+    @include font(700, 17px, 100%);
+    letter-spacing: -0.53px;
+    color: $blue-m;
+  }
 }

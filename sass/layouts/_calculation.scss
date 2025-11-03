@@ -1,5 +1,33 @@
-.calculation .container {
-  width: $container;
-  @extend %display-row;
-  @extend %layout-container;
+.calculation {
+  .container {
+    width: $container;
+    @extend %layout-container;
+    padding-bottom: 150px;
+  }
+  &__container {
+    display: flex;
+    gap: 74px;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__img {
+    margin-bottom: 8px;
+  }
+  &__title {
+    margin-bottom: 20px;
+    @include font(700, 24px, 36px);
+    letter-spacing: -0.75px;
+    color: $black-m;
+  }
+  &__item {
+    width: 308px;
+    @extend %mulish-font;
+    @include font(400, 16px, 24px);
+    letter-spacing: -0.5px;
+    color: $gray-m;
+  }
 }
