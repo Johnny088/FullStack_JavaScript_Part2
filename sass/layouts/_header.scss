@@ -1,0 +1,16 @@
+.header .container {
+  width: 1070px;
+  padding: 20px 0;
+  margin-left: calc((100% - 1146px) / 2);
+  @extend %display-row;
+  align-items: center;
+}
+
+.navigation__list {
+  display: flex;
+  gap: 48px;
+  &__item {
+    display: block;
+    padding: 44px 0;
+  }
+}

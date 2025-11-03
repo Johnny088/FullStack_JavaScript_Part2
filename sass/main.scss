@@ -1,1 +1,10 @@
+@import 'utils/placeholders';
+@import 'utils/vars';
 @import 'base/common';
+@import 'layouts/header';
+@import 'layouts/hero';
+@import 'layouts/navigation';
+@import 'layouts/description';
+@import 'layouts/scale';
+@import 'layouts/calculation';
+@import 'layouts/plan';

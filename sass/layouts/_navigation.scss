@@ -1,0 +1,7 @@
+.navigation__wrap .container {
+  width: $container;
+  @extend %layout-container;
+}
+.navigation__wrap__items {
+  @extend %display-row;
+}

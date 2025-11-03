@@ -1,0 +1,26 @@
+.hero {
+  & .container {
+    width: $container;
+    @extend %display-row;
+    @extend %layout-container;
+  }
+  &__title {
+    margin-bottom: 30px;
+    &__description {
+      margin-bottom: 50px;
+    }
+  }
+  &__first_element {
+    width: 462px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn {
+    &__arrow {
+      border: 0;
+      background: transparent;
+      width: 22px;
+      height: 10px;
+    }
+  }
+}

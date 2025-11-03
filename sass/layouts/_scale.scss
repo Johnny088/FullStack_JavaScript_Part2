@@ -1,0 +1,5 @@
+.scale .container {
+  width: $container;
+  @extend %display-row;
+  @extend %layout-container;
+}
