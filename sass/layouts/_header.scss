@@ -4,6 +4,16 @@
   margin-left: calc((100% - 1146px) / 2);
   @extend %display-row;
   align-items: center;
+  padding-bottom: 120px;
+}
+.header__btn {
+  padding: 20px 60px;
+  border-radius: 16px;
+  border: none;
+  color: $white-m;
+  background-color: $orange-m;
+  @include font(700, 17px, 100%);
+  letter-spacing: -0.53px;
 }
 
 .navigation__list {
@@ -12,5 +22,23 @@
   &__item {
     display: block;
     padding: 44px 0;
+    @include font(700, 16px, 100%);
+    color: $gray-m;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      height: 2px;
+    }
+    &:hover {
+      color: $black-m;
+      &::after {
+        width: 100%;
+        background-color: #5454d4;
+      }
+    }
   }
 }

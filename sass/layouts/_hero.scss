@@ -5,22 +5,45 @@
     @extend %layout-container;
   }
   &__title {
+    @include font(700, 80px, 77px);
+    color: $black-m;
+    letter-spacing: -2.5px;
     margin-bottom: 30px;
     &__description {
       margin-bottom: 50px;
     }
+  }
+  &__description {
+    @extend %mulish-font;
+    width: 460px;
+    @include font(400, 20px, 30px);
+    letter-spacing: -0.63px;
+    color: $gray-m;
+    margin-bottom: 50px;
   }
   &__first_element {
     width: 462px;
     display: flex;
     flex-direction: column;
   }
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
   &__btn {
+    color: $white-m;
+    background-color: $blue-m;
+    @include font(700, 17px, 100%);
+    letter-spacing: -0.53px;
+    padding: 20px 60px;
+    border-radius: 16px;
+    border: none;
+    margin-right: 40px;
     &__arrow {
       border: 0;
       background: transparent;
-      width: 22px;
-      height: 10px;
+      width: 60px;
+      height: 60px;
     }
   }
 }
