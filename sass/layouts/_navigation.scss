@@ -15,12 +15,10 @@
     padding-bottom: 0;
     padding-top: 50px;
     &__items {
-      flex-direction: row;
-      gap: 25px;
+      gap: 32px;
     }
     .container {
-      width: 768px;
-      padding: 0 20px;
+      @include medium();
     }
   }
 }

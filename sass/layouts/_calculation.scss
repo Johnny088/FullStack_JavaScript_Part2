@@ -35,7 +35,7 @@
 @media (max-width: 1111px) and (min-width: 768px) {
   .calculation {
     .container {
-      width: 768px;
+      @include medium();
       padding: 0 20px;
       gap: 20px;
       align-items: flex-start;

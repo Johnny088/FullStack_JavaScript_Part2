@@ -3,3 +3,8 @@
   font-size: $size;
   line-height: $height;
 }
+@mixin medium {
+  width: 768px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

@@ -52,7 +52,7 @@
 @media (max-width: 1111px) and (min-width: 768px) {
   .hero {
     & .container {
-      width: 768px;
+      @include medium();
     }
     &__title {
       font-size: 40px;

@@ -1,10 +1,12 @@
-.header .container {
-  width: 1070px;
-  margin-left: calc((100% - 1146px) / 2);
-  padding: 0 20px;
-  @extend %display-row;
-  align-items: center;
+.header {
   padding-bottom: 120px;
+  .container {
+    width: 1070px;
+    margin-left: calc((100% - 1146px) / 2);
+    padding: 0 20px;
+    @extend %display-row;
+    align-items: center;
+  }
 }
 .header__btn {
   padding: 20px 60px;
@@ -50,9 +52,8 @@
       align-content: center;
       justify-content: space-evenly;
       gap: 40px;
-      width: 768px;
-      margin-left: 0;
-      @extend %layout-container;
+      @include medium();
+      // margin-left: 0;
     }
     &__btn {
       padding: 10px 20px;

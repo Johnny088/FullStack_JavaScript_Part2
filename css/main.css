@@ -34,19 +34,25 @@ img {
 }
 
 body {
+  font-family: "Dm Sans", "Mulish", sans-serif;
+  color: #19191b;
+  font-size: 15px;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 button {
   cursor: pointer;
 }
 
+.header {
+  padding-bottom: 120px;
+}
 .header .container {
   width: 1070px;
   margin-left: calc((100% - 1146px) / 2);
   padding: 0 20px;
   align-items: center;
-  padding-bottom: 120px;
 }
 
 .header__btn {
@@ -97,7 +103,8 @@ button {
     justify-content: space-evenly;
     gap: 40px;
     width: 768px;
-    margin-left: 0;
+    margin: 0 auto;
+    padding: 0 20px;
   }
   .header__btn {
     padding: 10px 20px;
@@ -169,6 +176,8 @@ button {
 @media (max-width: 1111px) and (min-width: 768px) {
   .hero .container {
     width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
   .hero__title {
     font-size: 40px;
@@ -193,22 +202,18 @@ button {
   gap: 120px;
 }
 
-.navigation_wrap {
-  padding-bottom: 0;
-  padding-top: 50px;
-}
-
 @media (max-width: 1111px) and (min-width: 768px) {
   .navigation__wrap {
     padding-bottom: 0;
     padding-top: 50px;
   }
   .navigation__wrap__items {
-    flex-direction: row;
-    gap: 25px;
+    gap: 32px;
   }
   .navigation__wrap .container {
     width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 }
 .description {
@@ -250,6 +255,28 @@ button {
   color: #5454d4;
 }
 
+@media (max-width: 1111px) and (min-width: 768px) {
+  .description .container {
+    width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+  .description__title {
+    font-size: 30px;
+  }
+  .description__item {
+    width: 280px;
+  }
+  .description__item__wrap {
+    width: 280px;
+  }
+  .description__img {
+    width: 300px;
+    height: 300px;
+    margin-right: 0;
+  }
+}
 .scale .container {
   width: 1146px;
   display: flex;
@@ -282,6 +309,25 @@ button {
   color: #5454d4;
 }
 
+@media (max-width: 1111px) and (min-width: 768px) {
+  scale {
+    justify-content: space-between;
+  }
+  scale .container {
+    width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  scale__title {
+    font-size: 30px;
+  }
+  scale__item {
+    width: 280px;
+  }
+  scale__img {
+    width: 300px;
+  }
+}
 .calculation .container {
   width: 1146px;
   padding-bottom: 150px;
@@ -316,6 +362,21 @@ button {
   color: #696871;
 }
 
+@media (max-width: 1111px) and (min-width: 768px) {
+  .calculation .container {
+    width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding: 0 20px;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .calculation__wrap {
+    width: 220px;
+    text-align: center;
+    gap: 20px;
+  }
+}
 .plan {
   padding-bottom: 158px;
 }
@@ -419,4 +480,31 @@ button {
 }
 .plan__price__item:hover .plan__price__btn {
   background-color: #9f3919;
+}
+
+@media (max-width: 1111px) and (min-width: 768px) {
+  .plan .container {
+    width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .plan__price {
+    justify-content: normal;
+    gap: 20px;
+    width: 240px;
+  }
+  .plan__duration__title {
+    font-size: 30px;
+    width: 280px;
+    margin: 0;
+  }
+  .plan__duration__btn {
+    width: 100px;
+  }
+  .plan__price__item {
+    width: 220px;
+  }
+  .plan__price__btn {
+    width: 150px;
+  }
 }/*# sourceMappingURL=main.css.map */

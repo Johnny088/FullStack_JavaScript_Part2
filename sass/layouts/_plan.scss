@@ -100,12 +100,12 @@
 @media (max-width: 1111px) and (min-width: 768px) {
   .plan {
     .container {
-      width: 768px;
-      padding: 0 20px;
+      @include medium();
     }
     &__price {
       justify-content: normal;
       gap: 20px;
+      width: 240px;
     }
     &__duration__title {
       font-size: 30px;

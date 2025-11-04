@@ -31,10 +31,9 @@
 @media (max-width: 1111px) and (min-width: 768px) {
   scale {
     justify-content: space-between;
-  }
+  
   .container {
-    width: 768px;
-    padding: 0 20px;
+    @include medium();
   }
   &__title {
     font-size: 30px;
@@ -45,4 +44,5 @@
   &__img {
     width: 300px;
   }
+}
 }
