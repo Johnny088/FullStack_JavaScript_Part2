@@ -1,5 +1,5 @@
 .scale {
-  & .container {
+  .container {
     width: $container;
     display: flex;
     @extend %layout-container;
@@ -25,5 +25,24 @@
     @include font(700, 17px, 100%);
     letter-spacing: -0.53px;
     color: $blue-m;
+  }
+}
+
+@media (max-width: 1111px) and (min-width: 768px) {
+  scale {
+    justify-content: space-between;
+  }
+  .container {
+    width: 768px;
+    padding: 0 20px;
+  }
+  &__title {
+    font-size: 30px;
+  }
+  &__item {
+    width: 280px;
+  }
+  &__img {
+    width: 300px;
   }
 }

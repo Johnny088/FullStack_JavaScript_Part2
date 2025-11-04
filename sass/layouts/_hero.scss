@@ -48,3 +48,21 @@
     }
   }
 }
+
+@media (max-width: 1111px) and (min-width: 768px) {
+  .hero {
+    & .container {
+      width: 768px;
+    }
+    &__title {
+      font-size: 40px;
+    }
+    &__first__element {
+      width: 400px;
+    }
+    &__img__man {
+      width: 300px;
+      height: 400px;
+    }
+  }
+}

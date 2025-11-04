@@ -42,3 +42,28 @@
     }
   }
 }
+
+@media (max-width: 1111px) and (min-width: 768px) {
+  .header {
+    .container {
+      align-items: center;
+      align-content: center;
+      justify-content: space-evenly;
+      gap: 40px;
+      width: 768px;
+      margin-left: 0;
+      @extend %layout-container;
+    }
+    &__btn {
+      padding: 10px 20px;
+    }
+  }
+}
+.navigation__list {
+  display: flex;
+  gap: 32px;
+  &__item {
+    padding: 24px 0;
+    font-size: 17px;
+  }
+}

@@ -96,3 +96,30 @@
     }
   }
 }
+
+@media (max-width: 1111px) and (min-width: 768px) {
+  .plan {
+    .container {
+      width: 768px;
+      padding: 0 20px;
+    }
+    &__price {
+      justify-content: normal;
+      gap: 20px;
+    }
+    &__duration__title {
+      font-size: 30px;
+      width: 280px;
+      margin: 0;
+    }
+    &__duration__btn {
+      width: 100px;
+    }
+    &__price__item {
+      width: 220px;
+    }
+    &__price__btn {
+      width: 150px;
+    }
+  }
+}

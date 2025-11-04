@@ -31,3 +31,19 @@
     color: $gray-m;
   }
 }
+
+@media (max-width: 1111px) and (min-width: 768px) {
+  .calculation {
+    .container {
+      width: 768px;
+      padding: 0 20px;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    &__wrap {
+      width: 220px;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+}

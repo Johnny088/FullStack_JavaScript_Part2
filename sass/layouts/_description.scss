@@ -34,3 +34,24 @@
     color: $blue-m;
   }
 }
+
+@media (max-width: 1111px) and (min-width: 768px) {
+  .description {
+    .container {
+      width: 768px;
+      @extend %layout-container;
+      justify-content: space-between;
+    }
+    &__title {
+      font-size: 30px;
+    }
+    &__item__wrap {
+      width: 280px;
+    }
+  }
+}
+.descr_img {
+  width: 300px;
+  height: 300px;
+  margin-right: 0;
+}
