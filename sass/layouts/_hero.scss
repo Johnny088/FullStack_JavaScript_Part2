@@ -89,19 +89,26 @@
     &__btn {
       margin-bottom: 20px;
       margin-right: 0;
+      padding: 20px 32px;
+      &__arrow {
+        width: 56px;
+        height: 56px;
+      }
     }
     &__buttons {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 40px;
     }
+    &__img {
+      width: 56px;
+      height: 56px;
+    }
+
     &__img__man {
       width: 300px;
       height: 300px;
     }
-  }
-  .btn__wrap {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
   }
 }
