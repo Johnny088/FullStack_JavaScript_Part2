@@ -1,10 +1,10 @@
 .scale {
+  padding-bottom: 138px;
   .container {
     width: $container;
     display: flex;
     @extend %layout-container;
     align-items: center;
-    padding-bottom: 138px;
   }
   &__title {
     @include font(700, 50px, 57px);
@@ -29,20 +29,21 @@
 }
 
 @media (max-width: 1111px) and (min-width: 768px) {
-  scale {
+  .scale {
     justify-content: space-between;
-  
-  .container {
-    @include medium();
+    .container {
+      @include medium();
+      justify-content: space-between;
+    }
+    &__title {
+      font-size: 30px;
+    }
+    &__item {
+      width: 280px;
+      margin-right: 0;
+    }
+    &__img {
+      width: 300px;
+    }
   }
-  &__title {
-    font-size: 30px;
-  }
-  &__item {
-    width: 280px;
-  }
-  &__img {
-    width: 300px;
-  }
-}
 }

@@ -103,10 +103,13 @@
       @include medium();
     }
     &__price {
-      justify-content: normal;
+      justify-content: center;
       gap: 20px;
-      width: 240px;
+      &__title {
+        font-size: 28px;
+      }
     }
+
     &__duration__title {
       font-size: 30px;
       width: 280px;

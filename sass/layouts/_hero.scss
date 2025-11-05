@@ -54,10 +54,14 @@
     & .container {
       @include medium();
     }
+    &__description {
+      width: 400px;
+    }
     &__title {
       font-size: 40px;
+      line-height: 1.2;
     }
-    &__first__element {
+    &__first_element {
       width: 400px;
     }
     &__img__man {

@@ -1,8 +1,8 @@
 .calculation {
+  padding-bottom: 150px;
   .container {
     width: $container;
     @extend %layout-container;
-    padding-bottom: 150px;
   }
   &__container {
     display: flex;
@@ -43,7 +43,12 @@
     &__wrap {
       width: 220px;
       text-align: center;
+      align-items: center;
       gap: 20px;
+    }
+    &__item {
+      width: 132px;
+      line-height: 20px;
     }
   }
 }
