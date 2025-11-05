@@ -126,3 +126,40 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .plan {
+    .container {
+      @include phone_size();
+    }
+    &__price {
+      margin: 0 auto;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      width: 240px;
+      &__item {
+        width: 240px;
+      }
+      &__title {
+        font-size: 28px;
+      }
+      &__btn {
+        width: 160px;
+      }
+    }
+    &__duration {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 120px;
+      &__title {
+        font-size: 30px;
+        width: 280px;
+        margin-bottom: 30px;
+      }
+      &__btn {
+        width: 100px;
+      }
+    }
+  }
+}

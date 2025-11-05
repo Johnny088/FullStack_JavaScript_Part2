@@ -52,3 +52,23 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .calculation {
+    .container {
+      @include phone_size();
+    }
+    &__container {
+      flex-direction: column;
+      gap: 20px;
+    }
+    &__wrap {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &__item {
+      width: 60%;
+    }
+  }
+}

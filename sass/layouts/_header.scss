@@ -69,3 +69,25 @@
     font-size: 17px;
   }
 }
+
+@media (max-width: 767px) {
+  .header {
+    .container {
+      @include phone_size();
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+  .navigation {
+    &__list {
+      width: 200px;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-bottom: 30px;
+    }
+    &__item {
+      padding: 22px 0;
+    }
+  }
+}

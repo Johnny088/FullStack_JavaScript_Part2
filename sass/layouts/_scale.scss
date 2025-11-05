@@ -47,3 +47,28 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .scale {
+    .container {
+      @include phone_size();
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    &__title {
+      font-size: 30px;
+      width: 280px;
+    }
+    &__img {
+      width: 280px;
+      height: 300px;
+    }
+    &__item {
+      width: 280px;
+      margin: 0 0 30px 0;
+    }
+  }
+  .scale_container {
+    margin-bottom: 40px;
+  }
+}
