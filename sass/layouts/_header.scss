@@ -1,4 +1,5 @@
 .header {
+  padding-top: 30px;
   padding-bottom: 120px;
   .container {
     width: 1070px;
@@ -72,6 +73,9 @@
 
 @media (max-width: 767px) {
   .header {
+    &__logo {
+      margin-bottom: 30px;
+    }
     .container {
       @include phone_size();
       flex-wrap: wrap;
@@ -79,12 +83,12 @@
     }
   }
   .navigation {
+    margin-bottom: 30px;
     &__list {
       width: 200px;
       gap: 32px;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      margin-bottom: 30px;
     }
     &__item {
       padding: 22px 0;

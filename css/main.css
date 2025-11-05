@@ -46,6 +46,7 @@ button {
 }
 
 .header {
+  padding-top: 30px;
   padding-bottom: 120px;
 }
 .header .container {
@@ -121,6 +122,9 @@ button {
 }
 
 @media (max-width: 767px) {
+  .header__logo {
+    margin-bottom: 30px;
+  }
   .header .container {
     width: 320px;
     margin: 0 auto;
@@ -128,12 +132,14 @@ button {
     flex-wrap: wrap;
     align-items: center;
   }
+  .navigation {
+    margin-bottom: 30px;
+  }
   .navigation__list {
     width: 200px;
     gap: 32px;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-bottom: 30px;
   }
   .navigation__item {
     padding: 22px 0;
