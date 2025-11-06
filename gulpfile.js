@@ -7,10 +7,6 @@ import csso from 'gulp-csso';
 import gcmq from 'gulp-group-css-media-queries';
 import { deleteAsync } from 'del';
 import htmlmin from 'gulp-htmlmin';
-import imagemin from 'gulp-imagemin';
-import imageminJpegtran from 'imagemin-jpegtran';
-import imageminOptipng from 'imagemin-optipng';
-import imageminSvgo from 'imagemin-svgo';
 import svgstore from 'gulp-svgstore';
 import plumber from 'gulp-plumber';
 import rigger from 'gulp-rigger';
@@ -77,7 +73,7 @@ export function images() {
   return src(
     ['src/images/**/*.{png,jpg,jpeg,svg,gif,webp}', '!src/images/icons/**/*'],
     {
-      encoding: false, // <— критично! не дає Gulp перетворити файл у текст
+      encoding: false,
     }
   ).pipe(dest('build/images', { encoding: false }));
 }
