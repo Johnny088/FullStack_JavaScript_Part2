@@ -1,0 +1,56 @@
+body {
+  background-color: bisque;
+}
+ul {
+  list-style: none;
+}
+.rect {
+  fill: aqua;
+  stroke: brown;
+  stroke-width: 5px;
+  transition: all 500ms linear;
+}
+.rect:hover,
+.rect:focus {
+  /* fill: color-mix(in srgb, rgb(25, 229, 80) 60%, rgb(232, 180, 83) 40%);
+  stroke: color-mix(in srgb, rgb(12, 12, 23) 40%, rgb(203, 212, 203) 60%); */
+  fill: rgb(140, 246, 35);
+  stroke: rgb(232, 14, 195);
+}
+/* -----------------------rectangle ---------------------------- */
+.rectangle {
+  fill: orange;
+  stroke: blue;
+  stroke-width: 5px;
+  transition: all 500ms linear;
+}
+.rectangle:hover,
+.rectangle:focus {
+  fill: rgb(226, 21, 165);
+  stroke: rgb(13, 240, 51);
+  stroke-width: 20px;
+}
+/*-------------------------- circle----------------------- */
+.circle {
+  fill: lightblue;
+  stroke: rgb(79, 54, 8);
+  stroke-width: 5px;
+  transition: all 500ms linear;
+}
+.circle:hover,
+circle:focus {
+  fill: rgb(179, 236, 21);
+  stroke: rgb(60, 60, 196);
+}
+/* ----------------------ellipse----------------------- */
+.ellipse {
+  fill: chartreuse;
+  stroke: rgb(27, 26, 12);
+  stroke-width: 5px;
+  transition: all 500ms linear;
+}
+.ellipse:hover,
+ellipse:focus {
+  fill: rgb(28, 196, 234);
+  stroke: rgb(182, 16, 144);
+}
