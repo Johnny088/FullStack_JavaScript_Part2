@@ -3,11 +3,24 @@ body {
 }
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
+.content {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
 .rect {
   fill: aqua;
   stroke: brown;
   stroke-width: 5px;
+  width: 100px;
+  height: 100px;
   transition: all 500ms linear;
 }
 .rect:hover,
@@ -22,6 +35,8 @@ ul {
   fill: orange;
   stroke: blue;
   stroke-width: 5px;
+  width: 200px;
+  height: 100px;
   transition: all 500ms linear;
 }
 .rectangle:hover,
@@ -35,6 +50,8 @@ ul {
   fill: lightblue;
   stroke: rgb(79, 54, 8);
   stroke-width: 5px;
+  width: 100px;
+  height: 100px;
   transition: all 500ms linear;
 }
 .circle:hover,
@@ -47,6 +64,8 @@ ul {
   fill: chartreuse;
   stroke: rgb(27, 26, 12);
   stroke-width: 5px;
+  width: 200px;
+  height: 100px;
   transition: all 500ms linear;
 }
 .ellipse:hover,
