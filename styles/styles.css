@@ -38,7 +38,7 @@ ul {
   transition: all 500ms linear;
 }
 .circle:hover,
-circle:focus {
+.circle:focus {
   fill: rgb(179, 236, 21);
   stroke: rgb(60, 60, 196);
 }
@@ -50,7 +50,7 @@ circle:focus {
   transition: all 500ms linear;
 }
 .ellipse:hover,
-ellipse:focus {
+.ellipse:focus {
   fill: rgb(28, 196, 234);
   stroke: rgb(182, 16, 144);
 }
