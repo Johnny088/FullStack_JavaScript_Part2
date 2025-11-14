@@ -10,8 +10,221 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <header class="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sed maiores
+      temporibus a, officia expedita quidem fugiat? Fugit voluptatem vel
+      necessitatibus officia impedit tenetur quam repellat ea, incidunt quae
+      eligendi rem nihil mollitia quibusdam voluptatibus quod odit, ut alias
+      placeat temporibus perspiciatis consequatur error. Magnam quia dolor
+      fugiat vero voluptates. Est autem iste, cupiditate dicta repudiandae eum
+      ducimus laborum voluptatem asperiores, praesentium numquam quae et alias
+      vitae eius, iure culpa accusamus voluptas voluptatibus. Nihil ab tempora,
+      voluptatum cum temporibus animi beatae voluptas fugiat! Qui nam soluta
+      consequatur iste ipsa fugit harum nostrum aut autem rerum dolor,
+      recusandae voluptatibus minus eum.
+    </header>
+    <main>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-3">
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./images/test1.jpeg"
+                    class="d-block w-100"
+                    alt="picture 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./images/test2.jpeg"
+                    class="d-block w-100"
+                    alt="picture 2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./images/test3.jpeg"
+                    class="d-block w-100"
+                    alt="picture 3"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="accordion" id="accordion-test">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    test1
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>Lorem ipsum dolor sit amet.</strong> Some Added text
+                    to the accordeon menu...
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="true"
+                    aria-controls="collapseTwo"
+                  >
+                    test1
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>Lorem ipsum dolor sit amet.</strong> Some Added text
+                    to the accordeon menu...
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="true"
+                    aria-controls="collapseThree"
+                  >
+                    test1
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>Lorem ipsum dolor sit amet.</strong> Some Added text
+                    to the accordeon menu...
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ----------------------------Form----------------------------- -->
+
+            <div class="row col-8 mx-auto">
+              <div class="input-group mt-5 mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+
+            <div class="row col-8 mx-auto">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your email"
+                  aria-label="Recipient’s username"
+                  aria-describedby="basic-addon2"
+                />
+                <span class="input-group-text" id="basic-addon2"
+                  >@example.com</span
+                >
+              </div>
+              <div class="col-4 offset-8">
+                <button class="btn btn-primary px-4" type="submit">
+                  get in
+                </button>
+              </div>
+            </div>
+
+            <!-- --------------- Form is finished ---------------------------------- -->
+          </div>
+
+          <div class="col-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae et
+            maxime voluptatem quos accusamus possimus. Ipsa aut nisi, voluptatem
+            tempore exercitationem possimus vel quam, amet assumenda alias
+            cupiditate a! Ipsa.
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container pb-5">
+        <div class="row">
+          <h2>Some information</h2>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            minus quis possimus odio eligendi illo sit dicta natus! Blanditiis
+            fuga totam iste magnam dolorem maiores impedit, et magni veritatis
+            accusamus nisi consectetur possimus ut sed quibusdam voluptatem
+            molestias odio quisquam repellendus! Culpa, amet repellat? Fuga id
+            natus itaque minus. Vitae, qui voluptate. Libero non provident
+            laboriosam enim eveniet magnam reprehenderit, tempore soluta
+            voluptates minima. Ea accusamus hic exercitationem ad modi
+            recusandae, voluptas dignissimos tempora illo aperiam eos, nemo iure
+            rem cum inventore sit deserunt voluptates doloribus esse ipsam? Eum
+            earum corrupti labore omnis ipsum sit aut asperiores ipsa molestias
+            expedita?
+          </div>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
