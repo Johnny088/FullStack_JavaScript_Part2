@@ -7,51 +7,77 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="flex-col">
-      <div class="flex">
-        <h2 class="plan__duration__title">
+    <div class="flex-col mx-auto px-20px max-w-[300px] text-center">
+      <div class="flex-col">
+        <h2 class="font-bold text-2xl mb-4">
           Get the right plan for future product.
         </h2>
-        <ul class="plan__btn__wrap">
-          <li><button class="plan__duration__btn blue">Yearly</button></li>
-          <li><button class="plan__duration__btn">Monthly</button></li>
+        <ul class="flex justify-center text-base mb-4">
+          <li>
+            <button
+              class="font-bold text-base w-[120px] py-4 bg-gray-100 rounded-tl-xl rounded-bl-xl"
+            >
+              Yearly
+            </button>
+          </li>
+          <li>
+            <button
+              class="font-bold text-base w-[120px] py-4 bg-gray-100 rounded-tr-xl rounded-br-xl"
+            >
+              Monthly
+            </button>
+          </li>
         </ul>
       </div>
-      <ul class="plan__price">
+      <ul class="flex-col text-lg w-[280px] mx-auto">
         <!--margin ~ 20 width 330 -->
-        <li class="plan__price__item">
-          <p class="plan__price__type">Starter</p>
-          <h3 class="plan__price__title">Free</h3>
-          <p class="plan__price__description">1 Website</p>
-          <p class="plan__price__description">5 GB Hosting</p>
-          <p class="plan__price__description plan__price__last">
-            Limited Support
-          </p>
-          <button class="plan__price__btn">Get Started</button>
+        <li class="text-center mb-7 bg-gray-100 rounded-xl">
+          <p class="mb-3 pt-3">Starter</p>
+          <h3 class="font-bold text-2xl mb-6">Free</h3>
+          <p class="mb-3">1 Website</p>
+          <p class="mb-3">5 GB Hosting</p>
+          <p class="mb-10">Limited Support</p>
+          <button class="mb-8 py-4 w-[200px] bg-white rounded-xl">
+            Get Started
+          </button>
         </li>
-        <li class="plan__price__item">
-          <p class="plan__price__type">Premium</p>
-          <h3 class="plan__price__title">
-            $29<span class="plan__price__span">/month</span>
+        <li class="text-center mb-7 bg-gray-100 rounded-xl">
+          <p class="mb-3 pt-3">Premium</p>
+          <h3 class="font-bold text-2xl mb-6">
+            $29<span class="text-xl">/month</span>
           </h3>
-          <p class="plan__price__description">10 Website</p>
-          <p class="plan__price__description">15 GB Hosting</p>
-          <p class="plan__price__description plan__price__last">
+          <p class="mb-3">10 Website</p>
+          <p class="mb-3">15 GB Hosting</p>
+          <p class="mb-10">Premium Support</p>
+          <button class="mb-8 py-4 w-[200px] bg-white rounded-xl">
+            Get Started
+          </button>
+        </li>
+        <li
+          class="text-center mb-12 bg-gray-100 rounded-xl group duration-300 hover:scale-110 focus:scale-110 hover:bg-[#FF703B] focus:bg-[#FF703B]"
+        >
+          <p class="mb-3 pt-3 group-hover:text-white group-focus:text-white">
+            Enterprise
+          </p>
+          <h3
+            class="font-bold text-2xl mb-6 group-hover:text-white group-focus:text-white"
+          >
+            $49<span class="text-xl">/month</span>
+          </h3>
+          <p class="mb-3 group-hover:text-white group-focus:text-white">
+            Unlimited Website
+          </p>
+          <p class="mb-3 group-hover:text-white group-focus:text-white">
+            50 GB Hosting
+          </p>
+          <p class="mb-10 group-hover:text-white group-focus:text-white">
             Premium Support
           </p>
-          <button class="plan__price__btn">Get Started</button>
-        </li>
-        <li class="plan__price__item">
-          <p class="plan__price__type">Enterprise</p>
-          <h3 class="plan__price__title">
-            $49<span class="plan__price__span">/month</span>
-          </h3>
-          <p class="plan__price__description">Unlimited Website</p>
-          <p class="plan__price__description">50 GB Hosting</p>
-          <p class="plan__price__description plan__price__last">
-            Premium Support
-          </p>
-          <button class="plan__price__btn">Get Started</button>
+          <button
+            class="mb-8 py-4 w-[200px] bg-white rounded-xl group-hover:text-white group-focus:text-white group-hover:bg-[#9F3919]"
+          >
+            Get Started
+          </button>
         </li>
       </ul>
     </div>
