@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="flex-col pt-8 mx-auto px-20px max-w-[300px] text-center">
+    <div class="flex-col pt-8 mx-auto px-5 w-[300px] text-center md:w-[768px]">
       <div class="flex-col">
         <h2 class="font-bold text-2xl mb-10">
           Get the right plan for future product.
@@ -29,10 +29,12 @@
           </li>
         </ul>
       </div>
-      <ul class="flex-col text-lg w-[280px] mx-auto">
-        <!--margin ~ 20 width 330 -->
+      <ul
+        class="flex flex-col text-lg mx-auto md:flex-row md:gap-5 justify-center"
+      >
+        <!--w-[280px] -->
         <li
-          class="text-center mb-7 bg-gray-100 rounded-xl group duration-300 hover:scale-110 focus:scale-110 hover:bg-[#FF703B] focus:bg-[#FF703B]"
+          class="text-center mb-7 bg-gray-100 rounded-xl group duration-300 hover:scale-110 focus:scale-110 hover:bg-[#FF703B] focus:bg-[#FF703B] w-[260px] md:w-[220px]"
         >
           <p class="mb-3 pt-3 group-focus:text-white">Starter</p>
           <h3
@@ -56,7 +58,7 @@
           </button>
         </li>
         <li
-          class="text-center mb-7 bg-gray-100 rounded-xl group duration-300 hover:scale-110 focus:scale-110 hover:bg-[#FF703B] focus:bg-[#FF703B]"
+          class="text-center mb-7 bg-gray-100 rounded-xl group duration-300 hover:scale-110 focus:scale-110 hover:bg-[#FF703B] focus:bg-[#FF703B] w-[260px] md:w-[220px]"
         >
           <p class="mb-3 pt-3 group-hover:text-white group-focus:text-white">
             Premium
@@ -81,8 +83,9 @@
             Get Started
           </button>
         </li>
+        <!-- --------------------------------------------------------------------------------------------- -->
         <li
-          class="text-center mb-12 bg-gray-100 rounded-xl group duration-300 hover:scale-110 focus:scale-110 hover:bg-[#FF703B] focus:bg-[#FF703B]"
+          class="text-center mb-12 bg-gray-100 rounded-xl group duration-300 hover:scale-110 focus:scale-110 hover:bg-[#FF703B] focus:bg-[#FF703B] w-[260px] md:w-[220px]"
         >
           <p class="mb-3 pt-3 group-hover:text-white group-focus:text-white">
             Enterprise
