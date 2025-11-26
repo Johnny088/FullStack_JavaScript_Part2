@@ -3,23 +3,25 @@ console.log(
 );
 
 // ім'я змінної: myNum, значення: 10
-let myNum = 10;
+const myNum = 10;
 console.log(`myNum ${myNum}`);
 
 // ім'я змінної: myStr, значення: 'some string'
-let myStr = 'some string';
+const myStr = 'some string';
 console.log(`myStr ${myStr}`);
 
 // ім'я змінної: myBool, значення: true
-let myBool = true;
+const myBool = true;
 console.log(`myBool ${myBool}`);
 
 // ім'я змінної: myArr, значення: 1, 2, 3, 4, 5
-let myArr = Array(1, 2, 3, 4, 5);
-console.log(`myArr ${myArr}`);
+console.log('myArr');
+const myArr = [1, 2, 3, 4, 5];
+console.log(myArr);
+console.log(`myArr is  ${typeof myArr}`);
 
 // ім'я змінної: myObj, значення: first: 'First Name', last: 'Last Name'
-let myObj = { first: 'First Name', last: 'Last Name' };
+const myObj = { first: 'First Name', last: 'Last Name' };
 console.log(`myObj: \nfirst: ${myObj.first} \nlast: ${myObj.last}`);
 
 /*
@@ -29,7 +31,7 @@ console.log(`myObj: \nfirst: ${myObj.first} \nlast: ${myObj.last}`);
  * Результат збережіть у змінній decimal2.
  */
 
-let decimal2 = myNum.toFixed(2);
+const decimal2 = myNum.toFixed(2);
 console.log(decimal2);
 
 /*
@@ -41,4 +43,7 @@ console.log(decimal2);
 let myBigInt = 123n;
 console.log(`myBigint ${myBigInt}`);
 console.log(`type ${typeof myBigInt}`);
+myBigInt += 1n;
+console.log(`myBigint ${myBigInt}`);
+
 // myBigInt
