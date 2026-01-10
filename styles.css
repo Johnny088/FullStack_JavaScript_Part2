@@ -1,0 +1,35 @@
+#root {
+  width: 80%;
+  display: grid;
+  grid-column: 1fr 1fr;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background: rgb(129, 127, 127);
+}
+.title {
+  grid-column: span 2;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+button {
+  width: 200px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 10px 8px;
+  background: linear-gradient(45deg, rgb(61, 61, 189), rgb(248, 248, 112));
+  cursor: pointer;
+  transition: transform 400ms ease;
+  font-size: 16px;
+}
+button:hover {
+  transform: scale(1.2);
+}
