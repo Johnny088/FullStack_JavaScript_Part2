@@ -63,14 +63,16 @@ function startHtml() {
     container.append(wrapper, infoDiv);
     item.append(container);
   });
+
+  // --------------adding a new book -----------------
   const formBtn = document.createElement('button');
   formBtn.textContent = 'add new book';
+
   formBtn.addEventListener('click', () => {
     addBook(item);
   });
   item.append(formBtn);
 }
-startHtml();
 
 // --------------------------------form ----------------------------------
 const addBook = box => {
@@ -103,3 +105,5 @@ const addBook = box => {
     startHtml();
   });
 };
+
+startHtml();

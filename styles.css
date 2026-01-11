@@ -12,9 +12,6 @@ body {
   background: rgb(129, 127, 127);
   text-align: center;
 }
-.title {
-}
-
 .item {
   display: flex;
   flex-direction: column;
