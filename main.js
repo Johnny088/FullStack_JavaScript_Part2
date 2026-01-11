@@ -39,20 +39,67 @@ const books = [
   },
 ];
 
-const item = document.querySelector('#root');
-item.innerHTML = '<h1 class="title">List of books</h1>';
-
-books.forEach(book => {
-  //   item.innerHTML += `<div class="item">${book.title} <button>show description</button></div> <div></div>`;
-  const wrapper = document.createElement('div');
-  const btn = document.createElement('button');
-  btn.textContent = 'view details';
-  const infoDiv = document.createElement('div');
-  wrapper.className = 'item';
-  wrapper.innerHTML = `<h3>${book.title}</h3>`;
-  btn.addEventListener('click', () => {
-    infoDiv.innerHTML = `<p>${book.title} ${book.author}</p> <p>${book.year}</p> <p>${book.description}</p>`;
+function startHtml() {
+  const item = document.querySelector('#root');
+  const container = document.createElement('div');
+  container.className = 'container';
+  item.innerHTML = '<h1 class="title">List of books</h1>';
+  item.append(container);
+  books.forEach(book => {
+    const wrapper = document.createElement('div');
+    const btn = document.createElement('button');
+    btn.textContent = 'view details';
+    const infoDiv = document.createElement('div');
+    wrapper.className = 'item';
+    wrapper.innerHTML = `<h3>${book.title}</h3>`;
+    btn.addEventListener('click', () => {
+      if (!infoDiv.innerHTML) {
+        infoDiv.innerHTML = `<p>${book.title}</p> <p>${book.author}</p> <p>${book.year}</p> <p>${book.description}</p>`;
+        return;
+      }
+      infoDiv.innerHTML = '';
+    });
+    wrapper.append(btn);
+    container.append(wrapper, infoDiv);
+    item.append(container);
   });
-  wrapper.append(btn);
-  item.append(wrapper, infoDiv);
-});
+  const formBtn = document.createElement('button');
+  formBtn.textContent = 'add new book';
+  formBtn.addEventListener('click', () => {
+    addBook(item);
+  });
+  item.append(formBtn);
+}
+startHtml();
+
+// --------------------------------form ----------------------------------
+const addBook = box => {
+  if (box.querySelector('.submitForm')) {
+    return;
+  }
+  const form = document.createElement('form');
+  form.className = 'submitForm';
+  form.innerHTML = `<input type="text" required placeholder="Title"  name="bookTitle"/>
+      <input type="text" required placeholder="Author" name="author"/>
+      <input type="number" required placeholder="Year" name="year"/>
+      <input type="text" required placeholder="Description" name="description"/>
+      <button>save</button>`;
+  box.append(form);
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const title = form.bookTitle.value;
+    const author = form.author.value;
+    const year = form.year.value;
+    const description = form.description.value;
+    const id = books.length + 1;
+    books.push({
+      id: id,
+      title: title,
+      author: author,
+      year: year,
+      description: description,
+    });
+    form.remove();
+    startHtml();
+  });
+};

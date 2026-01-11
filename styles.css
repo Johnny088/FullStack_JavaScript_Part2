@@ -1,25 +1,47 @@
-#root {
-  width: 80%;
+/* #root {
+  width: 60%;
   display: grid;
   grid-column: 1fr 1fr;
   margin: 0 auto;
   text-align: center;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+} */
+.container {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 60px;
 }
 body {
   background: rgb(129, 127, 127);
+  text-align: center;
 }
 .title {
-  grid-column: span 2;
 }
+
 .item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 4px;
 }
+.submitForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+/* buttons */
 button {
   width: 200px;
   border-radius: 8px;
