@@ -51,7 +51,7 @@ function startHtml() {
   root.append(container);
   // --------------------------------------------------------------------
   const booksTest = books
-    .map(({ title, author, year, description, id }) => {
+    .map(({ title, id }) => {
       return `<li><h3>${title}</h3><button id="${id}">view details</button></li>`;
     })
     .join('');
