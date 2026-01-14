@@ -19,7 +19,7 @@ body {
   align-items: start;
   gap: 4px;
 }
-.submitForm {
+/* .submitForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ body {
   width: 200px;
   margin: 0 auto;
   margin-bottom: 60px;
-}
+} */
 
 /* buttons */
 button {
@@ -42,4 +42,10 @@ button {
 }
 button:hover {
   transform: scale(1.2);
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

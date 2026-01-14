@@ -40,70 +40,34 @@ const books = [
 ];
 
 function startHtml() {
-  const item = document.querySelector('#root');
+  const root = document.querySelector('#root');
+  const list = document.createElement('ul');
+  list.classList.add('list');
   const container = document.createElement('div');
+  const descriptionDiv = document.createElement('div');
+  descriptionDiv.classList.add('info');
   container.className = 'container';
-  item.innerHTML = '<h1 class="title">List of books</h1>';
-  item.append(container);
-  books.forEach(book => {
-    const wrapper = document.createElement('div');
-    const btn = document.createElement('button');
-    btn.textContent = 'view details';
-    const infoDiv = document.createElement('div');
-    wrapper.className = 'item';
-    wrapper.innerHTML = `<h3>${book.title}</h3>`;
-    btn.addEventListener('click', () => {
-      if (!infoDiv.innerHTML) {
-        infoDiv.innerHTML = `<p>${book.title}</p> <p>${book.author}</p> <p>${book.year}</p> <p>${book.description}</p>`;
-        return;
-      }
-      infoDiv.innerHTML = '';
-    });
-    wrapper.append(btn);
-    container.append(wrapper, infoDiv);
-    item.append(container);
-  });
-
-  // --------------adding a new book -----------------
-  const formBtn = document.createElement('button');
-  formBtn.textContent = 'add new book';
-
-  formBtn.addEventListener('click', () => {
-    addBook(item);
-  });
-  item.append(formBtn);
+  root.innerHTML = '<h1 class="title">List of books</h1>';
+  root.append(container);
+  // --------------------------------------------------------------------
+  const booksTest = books
+    .map(({ title, author, year, description, id }) => {
+      return `<li><h3>${title}</h3><button id="${id}">view details</button></li>`;
+    })
+    .join('');
+  list.insertAdjacentHTML('afterbegin', booksTest);
+  container.append(list, descriptionDiv);
 }
 
-// --------------------------------form ----------------------------------
-const addBook = box => {
-  if (box.querySelector('.submitForm')) {
-    return;
-  }
-  const form = document.createElement('form');
-  form.className = 'submitForm';
-  form.innerHTML = `<input type="text" required placeholder="Title"  name="bookTitle"/>
-      <input type="text" required placeholder="Author" name="author"/>
-      <input type="number" required placeholder="Year" name="year"/>
-      <input type="text" required placeholder="Description" name="description"/>
-      <button>save</button>`;
-  box.append(form);
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const title = form.bookTitle.value;
-    const author = form.author.value;
-    const year = form.year.value;
-    const description = form.description.value;
-    const id = books.length + 1;
-    books.push({
-      id: id,
-      title: title,
-      author: author,
-      year: year,
-      description: description,
-    });
-    form.remove();
-    startHtml();
-  });
-};
-
 startHtml();
+const bookList = document.querySelector('.list');
+const infoDiv = document.querySelector('.info');
+bookList.addEventListener('click', e => {
+  if (e.target.nodeName === 'BUTTON') {
+    const id = Number(e.target.id);
+    const { title, author, year, description } = books.find(
+      book => book.id === id
+    );
+    infoDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
+  }
+});
