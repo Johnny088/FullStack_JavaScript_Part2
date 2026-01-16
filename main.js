@@ -49,25 +49,31 @@ function startHtml() {
   container.className = 'container';
   root.innerHTML = '<h1 class="title">List of books</h1>';
   root.append(container);
-  // --------------------------------------------------------------------
+  renderBooks(list);
+  container.append(list, descriptionDiv);
+  bookHandler(list, descriptionDiv);
+}
+
+// ---------------------------------  render list -----------------------------
+const renderBooks = list => {
   const booksTest = books
     .map(({ title, id }) => {
       return `<li><h3>${title}</h3><button id="${id}">view details</button></li>`;
     })
     .join('');
   list.insertAdjacentHTML('afterbegin', booksTest);
-  container.append(list, descriptionDiv);
-}
+};
+// --------------------book info ----------------------
+const bookHandler = (list, descriptionDiv) => {
+  list.addEventListener('click', e => {
+    if (e.target.nodeName === 'BUTTON') {
+      const id = Number(e.target.id);
+      const { title, author, year, description } = books.find(
+        book => book.id === id
+      );
+      descriptionDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
+    }
+  });
+};
 
 startHtml();
-const bookList = document.querySelector('.list');
-const infoDiv = document.querySelector('.info');
-bookList.addEventListener('click', e => {
-  if (e.target.nodeName === 'BUTTON') {
-    const id = Number(e.target.id);
-    const { title, author, year, description } = books.find(
-      book => book.id === id
-    );
-    infoDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
-  }
-});
