@@ -15,15 +15,15 @@ addBtn.textContent = 'add new book';
 addBtn.classList.add('form_btn');
 root.append(container);
 container.append(list, infoDiv, addBtn);
-let copyBooks;
+// let copyBooks;
 // ---------------------------------- getting books ---------------------------------
 function renderBooks() {
   fetch(BASE_URL)
     .then(response => response.json())
     .then(data => {
       const books = data.map(({ id, title }) => markupLi(id, title)).join('');
-      copyBooks = data;
-      console.log(copyBooks);
+      // copyBooks = data;
+      // console.log(copyBooks);
       list.innerHTML = books;
     })
     .catch(error => console.log(error));
@@ -40,28 +40,24 @@ const deleteBook = id => {
 // -------------------------- adding listeners for view details and delete buttons --------------------------
 list.addEventListener('click', e => {
   e.preventDefault();
-  if (
-    e.target.nodeName === 'BUTTON' &&
-    e.target.textContent === 'view details'
-  ) {
-    const id = e.target.parentNode.id;
-    const { title, author, year, description } = copyBooks.find(
-      book => book.id === id,
-    );
-    infoDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
-  } else if (
-    e.target.nodeName === 'BUTTON' &&
-    e.target.textContent === 'delete'
-  ) {
-    const id = e.target.parentNode.id;
-    e.target.parentNode.remove();
-    setTimeout(
-      () => (infoDiv.innerHTML = `<h2>the book was deleted</h2>`),
-      1000,
-    );
-    setTimeout(() => (infoDiv.innerHTML = ''), 4000);
-    copyBooks = copyBooks.filter(book => book.id !== id);
-    deleteBook(id);
+  if (e.target.nodeName === 'BUTTON') {
+    if (e.target.textContent === 'view details') {
+      const id = e.target.parentNode.id;
+      const { title, author, year, description } = copyBooks.find(
+        book => book.id === id,
+      );
+      infoDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
+    } else if (e.target.textContent === 'delete') {
+      const id = e.target.parentNode.id;
+      e.target.parentNode.remove();
+      setTimeout(
+        () => (infoDiv.innerHTML = `<h2>the book was deleted</h2>`),
+        1000,
+      );
+      setTimeout(() => (infoDiv.innerHTML = ''), 4000);
+      copyBooks = copyBooks.filter(book => book.id !== id);
+      deleteBook(id);
+    }
   }
 });
 // ----------------- adding a new book --------------------
@@ -84,10 +80,10 @@ addBtn.addEventListener('click', () => {
 function newBookHandler(form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const title = form.bookTitle.value;
-    const author = form.author.value;
+    const title = form.bookTitle.value.trim();
+    const author = form.author.value.trim();
     const year = Number(form.year.value);
-    const description = form.description.value;
+    const description = form.description.value.trim();
     let error = '';
     let n = 0;
     if (Number.isNaN(year) || year <= 0) {
