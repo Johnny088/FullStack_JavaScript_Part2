@@ -15,48 +15,54 @@ addBtn.textContent = 'add new book';
 addBtn.classList.add('form_btn');
 root.append(container);
 container.append(list, infoDiv, addBtn);
-// let copyBooks;
-// ---------------------------------- getting books ---------------------------------
+// ---------------------------------- get Api data + Render books ---------------------------------
 function renderBooks() {
+  list.innerHTML = '';
   fetch(BASE_URL)
     .then(response => response.json())
     .then(data => {
       const books = data.map(({ id, title }) => markupLi(id, title)).join('');
-      // copyBooks = data;
-      // console.log(copyBooks);
+
       list.innerHTML = books;
     })
     .catch(error => console.log(error));
 }
 renderBooks();
-// ------ deleting book -------------------
+// -------------------------------------------------- deleting book -------------------
 const deleteBook = id => {
   const options = {
     method: 'DELETE',
   };
-  fetch(`${BASE_URL}/${id}`, options).catch(error => console.log(error));
+  fetch(`${BASE_URL}/${id}`, options)
+    .then(() => renderBooks())
+    .catch(error => console.log(error));
 };
-
+//---------------------------------------------------    get book by  id ---------------
+function getBookById(id) {
+  fetch(`${BASE_URL}/${id}`)
+    .then(response => response.json())
+    .then(data => {
+      const { title, author, year, description } = data;
+      infoDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
+    })
+    .catch(error => console.log(error));
+}
 // -------------------------- adding listeners for view details and delete buttons --------------------------
 list.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.nodeName === 'BUTTON') {
     if (e.target.textContent === 'view details') {
       const id = e.target.parentNode.id;
-      const { title, author, year, description } = copyBooks.find(
-        book => book.id === id,
-      );
-      infoDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
+      getBookById(id);
     } else if (e.target.textContent === 'delete') {
+      e.target.textContent = 'deleting...';
       const id = e.target.parentNode.id;
-      e.target.parentNode.remove();
-      setTimeout(
-        () => (infoDiv.innerHTML = `<h2>the book was deleted</h2>`),
-        1000,
-      );
-      setTimeout(() => (infoDiv.innerHTML = ''), 4000);
-      copyBooks = copyBooks.filter(book => book.id !== id);
       deleteBook(id);
+
+      setTimeout(() => {
+        infoDiv.innerHTML = `<h2>the book was deleted</h2>`;
+      }, 1000);
+      setTimeout(() => (infoDiv.innerHTML = ''), 4000);
     }
   }
 });
@@ -72,7 +78,7 @@ addBtn.addEventListener('click', () => {
     <input type="text" placeholder="Author" name="author"/>
     <input type="text"  placeholder="Year" name="year"/>
     <textarea type="text" placeholder="Description" name="description" rows="5" cols="50"></textarea>
-    <button>save</button>`;
+    <button class="save_btn">save</button>`;
   infoDiv.append(form);
   newBookHandler(form);
 });
@@ -86,26 +92,25 @@ function newBookHandler(form) {
     const description = form.description.value.trim();
     let error = '';
     let n = 0;
-    if (Number.isNaN(year) || year <= 0) {
+    if (Number.isNaN(year) || year <= 0 || !Number.isInteger(year)) {
       error += `${(n += 1)}) - Year must be a number, and >= 0\n`;
     }
     if (!title) {
-      error += `${(n += 1)}) - The title is requared\n`;
+      error += `${(n += 1)}) - The title is required\n`;
     }
     if (!author) {
-      error += `${(n += 1)}) - The author is requared\n`;
+      error += `${(n += 1)}) - The author is required\n`;
     }
     if (!description) {
-      error += `${(n += 1)}) - The description is requared`;
+      error += `${(n += 1)}) - The description is required`;
     }
     if (error !== '') {
       alert(error);
       return;
     }
-    const id =
-      copyBooks.reduce((acc, books) => Math.max(acc, Number(books.id)), 0) + 1;
+    saveBtn = document.querySelector('.save_btn');
+    saveBtn.textContent = 'saving....';
     const newBook = {
-      id: `${id}`,
       title: title,
       author: author,
       year: year,
@@ -125,9 +130,8 @@ function addToApi(newBook, form) {
   };
   fetch(BASE_URL, options)
     .then(() => {
-      copyBooks.push(newBook);
-      list.insertAdjacentHTML('beforeend', markupLi(newBook.id, newBook.title));
       form.remove();
+      renderBooks();
     })
     .catch(error => console.log(error));
 }
