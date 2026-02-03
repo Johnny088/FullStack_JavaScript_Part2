@@ -1,6 +1,6 @@
 const BASE_URL = `https://6971cf4a32c6bacb12c49096.mockapi.io/books`;
 const markupLi = (id, title) =>
-  `<li id="${id}"><h3>${title}</h3><button>view details</button><button class="delete">delete</button></li>`;
+  `<li id="${id}"><h3>${title}</h3><button data-id="view">view details</button><button class="delete" data-id="del">delete</button></li>`;
 // -------------------------------render html-----------------------------------------
 const root = document.querySelector('#root');
 const list = document.createElement('ul');
@@ -17,7 +17,7 @@ root.append(container);
 container.append(list, infoDiv, addBtn);
 // ---------------------------------- get Api data + Render books ---------------------------------
 function renderBooks() {
-  list.innerHTML = '';
+  list.innerHTML = '<h2>Loading...</h2>';
   fetch(BASE_URL)
     .then(response => response.json())
     .then(data => {
@@ -38,23 +38,27 @@ const deleteBook = id => {
     .catch(error => console.log(error));
 };
 //---------------------------------------------------    get book by  id ---------------
-function getBookById(id) {
+function getBookById(id, btn) {
   fetch(`${BASE_URL}/${id}`)
     .then(response => response.json())
     .then(data => {
       const { title, author, year, description } = data;
       infoDiv.innerHTML = `<h3>${title}</h3> <p>${author}</p> <p>${year}</p> <p>${description}</p>`;
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
+    .finally(() => {
+      btn.textContent = 'view details';
+    });
 }
 // -------------------------- adding listeners for view details and delete buttons --------------------------
 list.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.nodeName === 'BUTTON') {
-    if (e.target.textContent === 'view details') {
+    if (e.target.dataset.id === 'view') {
+      e.target.textContent = 'Loading...';
       const id = e.target.parentNode.id;
-      getBookById(id);
-    } else if (e.target.textContent === 'delete') {
+      getBookById(id, e.target);
+    } else if (e.target.dataset.id === 'del') {
       e.target.textContent = 'deleting...';
       const id = e.target.parentNode.id;
       deleteBook(id);
